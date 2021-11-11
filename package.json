@@ -1,0 +1,37 @@
+{
+  "name": "evergeen",
+  "version": "1.0.0",
+  "description": "shopping cart",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/killivalavan/evergreen-mern.git"
+  },
+  "keywords": [],
+  "author": "killi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/killivalavan/evergreen-mern/issues"
+  },
+  "homepage": "https://github.com/killivalavan/evergreen-mern#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.14"
+  }
+}
