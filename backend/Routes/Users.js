@@ -9,7 +9,7 @@ router.post("/login", async (req, res) => {
       password,
     });
   } catch (err) {
-    res.json({ message: "USer not Found" });
+    res.json({ message: "User not Found" });
   }
 });
 
