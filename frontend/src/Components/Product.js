@@ -6,12 +6,15 @@ import { Link } from "react-router-dom";
 const Product = ({ id, name, img, price, review, ratings }) => {
   return (
     <StyledProduct>
-      <Link className='card' to={`/Product/${id}`}>
-        <img src={img} alt='No image Found' />
-        <div className='card-body'>
-          <h4>{name}</h4>
-          <Rating className='rating' review={review} rating={ratings} />
-          <h3>&#8377; {price}</h3>
+      <Link className="link" to={`/Product/${id}`}>
+        <img src={img} alt="No image Found" />
+        <div className="cardBody">
+          <p>{name}</p>
+          <Rating className="rating" review={review} rating={ratings} />
+          <div className="price">
+            {" "}
+            <span>&#8377;</span> {price}
+          </div>
         </div>
       </Link>
     </StyledProduct>
@@ -29,7 +32,7 @@ const StyledProduct = styled.div`
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
-  .card-body {
+  .cardBody {
     padding: 0.5rem;
   }
   img {
@@ -38,13 +41,19 @@ const StyledProduct = styled.div`
     object-fit: cover;
     width: 100%;
   }
-  h4 {
+  p {
+    font-size: 0.9rem;
     font-weight: 600;
   }
 
-  h3 {
-    font-size: 1rem;
+  .price {
+    font-size: 1.1rem;
     font-weight: 500;
+  }
+  .link {
+    &:hover {
+      color: black;
+    }
   }
 `;
 

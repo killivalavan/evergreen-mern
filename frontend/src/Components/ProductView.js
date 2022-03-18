@@ -31,24 +31,24 @@ const ProductView = () => {
   return (
     <>
       <Back>
-        <Link className='back-btn' to='/'>
+        <Link className="back-btn" to="/">
           Go Back
         </Link>
       </Back>
       <Product>
-        <div className='image'>
-          <img src={selectedProduct.image} alt='image not found' />
+        <div className="image">
+          <img src={selectedProduct.image} alt="image not found" />
         </div>
-        <div className='content'>
+        <div className="content">
           <h3>{selectedProduct.name}</h3>
           <Rating
             review={selectedProduct.numReviews}
             rating={selectedProduct.rating}
           />
-          <p>&#x20b9; {selectedProduct.price}</p>
-          <p className='desc'>Description: {selectedProduct.description}</p>
+          <p className="price">&#x20b9; {selectedProduct.price}</p>
+          <p className="desc">Description: {selectedProduct.description}</p>
         </div>
-        <div className='add-to-cart'>
+        <div className="add-to-cart">
           <ul>
             <li>
               <p>Price:</p>
@@ -67,14 +67,14 @@ const ProductView = () => {
                   onChange={(e) => {
                     setQty(e.target.value);
                   }}
-                  className='qty'
-                  name='qty'
+                  className="qty"
+                  name="qty"
                 >
-                  <option value='1'>1</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
-                  <option value='4'>4</option>
-                  <option value='5'>5</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
                 </select>
               </strong>
             </li>
@@ -97,7 +97,7 @@ const Product = styled.div`
   min-height: 40vh;
   width: 70%;
   margin: 4rem auto;
-  color: #686868;
+  color: var(--grey);
   display: grid;
   grid-gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, auto));
@@ -132,7 +132,7 @@ const Product = styled.div`
     padding: 10px;
     display: flex;
     justify-content: space-between;
-
+    color: black;
     button {
       width: 100%;
       text-align: center;
@@ -152,6 +152,9 @@ const Product = styled.div`
   ul :last-child {
     justify-content: center;
   }
+  .price {
+    font-weight: 600;
+  }
 
   @media screen and (max-width: 842px) {
     /* grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); */
@@ -163,6 +166,9 @@ const Back = styled.div`
   width: 70%;
   margin: auto;
   margin-top: 1rem;
+  .back-btn {
+    color: black;
+  }
 `;
 
 export default ProductView;

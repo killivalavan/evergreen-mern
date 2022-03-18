@@ -14,7 +14,7 @@ const Rating = ({ rating, review }) => {
         stars.push(
           <FontAwesomeIcon
             key={i}
-            className='star'
+            className="star"
             icon={faStar}
           ></FontAwesomeIcon>
         );
@@ -22,7 +22,7 @@ const Rating = ({ rating, review }) => {
         stars.push(
           <FontAwesomeIcon
             key={i}
-            className='star'
+            className="star"
             icon={farFaStar}
           ></FontAwesomeIcon>
         );
@@ -30,7 +30,7 @@ const Rating = ({ rating, review }) => {
         stars.push(
           <FontAwesomeIcon
             key={i}
-            className='star'
+            className="star"
             icon={faStarHalfAlt}
           ></FontAwesomeIcon>
         );
@@ -41,20 +41,20 @@ const Rating = ({ rating, review }) => {
 
   return (
     <StyledRating>
-      <h5>
+      <p>
         <span> {getStars()} </span>
         {review} reviews
-      </h5>
+      </p>
     </StyledRating>
   );
 };
 
 const StyledRating = styled.div`
   margin: 0.5rem 0rem;
-  h5 {
-    font-weight: 500;
-  }
 
+  p {
+    font-size: 0.8rem;
+  }
   span {
     color: #f8e825;
   }

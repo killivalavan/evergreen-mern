@@ -9,14 +9,20 @@ const GlobalStyle = createGlobalStyle`
 }
 html{ 
     --green: #00e06e;
+    --grey: #686868
 }
 
 body{
-    font-family: 'Open Sans', sans-serif;} 
+    font-family: 'Open Sans', sans-serif;
+} 
 a{
     text-decoration: none;
-    color: #333;
+    color: black;
+    /* &:hover{
+        color: inherit;
+    }    */
 }
+
 a,button{
     &:hover{
       cursor: pointer;
@@ -24,6 +30,10 @@ a,button{
 }
 ul{
     list-style: none;
+    margin-bottom:0 ;
+}
+p{
+    margin-bottom: 0;
 }
     
 

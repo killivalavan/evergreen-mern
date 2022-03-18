@@ -37,16 +37,16 @@ const Cart = () => {
 
   return (
     <StyledCart>
-      <p className='title'>SHOPPING CART</p>
+      <p className="title">SHOPPING CART</p>
       {cartItems.length === 0 ? (
         <Alert />
       ) : (
         <CartItems>
-          <div className='grid-one'>
+          <div className="grid-one">
             {cartItems.map((item) => (
-              <div className='card' key={item.product}>
-                <img src={item.image} alt='' />
-                <p className='product-name'>
+              <div className="Content" key={item.product}>
+                <img src={item.image} alt="" />
+                <p className="product-name">
                   <Link to={`/Product/${item.product}`}>{item.name}</Link>
                 </p>
                 <p>{item.price}</p>
@@ -57,15 +57,15 @@ const Cart = () => {
                       fetchCartItems(item.product, Number(e.target.value))
                     );
                   }}
-                  className='qty'
-                  name='qty'
+                  className="qty"
+                  name="qty"
                 >
                   <option value={item.qty}>{item.qty}</option>
-                  <option value='1'>1</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
-                  <option value='4'>4</option>
-                  <option value='5'>5</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
                 </select>
                 <button onClick={() => itemRemoveHandler(item.product)}>
                   <FontAwesomeIcon icon={faTrash} />
@@ -74,10 +74,10 @@ const Cart = () => {
             ))}
           </div>
           {cartItems.length !== 0 ? (
-            <div className='grid-two'>
+            <div className="grid-two">
               <ul>
                 <li>
-                  <p className='subtotal'>
+                  <p className="subtotal">
                     subtotal ({cartItems.length}) items
                   </p>
                   <br />
@@ -138,7 +138,7 @@ const CartItems = styled.div`
   }
 
   .grid-one {
-    .card {
+    .Content {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -155,6 +155,7 @@ const CartItems = styled.div`
     }
   }
   .grid-two {
+    color: black;
     ul li {
       border: 1px solid #ddd;
       margin-top: -1px; /* Prevent double borders */
